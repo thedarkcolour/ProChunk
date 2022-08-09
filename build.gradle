@@ -16,10 +16,7 @@ archivesBaseName = 'prochunk'
 java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
 minecraft {
-    // Change to your preferred mappings
     mappings channel: 'official', version: '1.16.5'
-    // Add your AccessTransformer
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     runs {
         client {
@@ -45,39 +42,12 @@ minecraft {
                 }
             }
         }
-
-        data {
-            workingDirectory project.file('run')
-
-            property 'forge.logging.console.level', 'debug'
-
-            args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources')
-
-            mods {
-                examplemod {
-                    source sourceSets.main
-                }
-            }
-        }
-    }
-}
-
-// Include assets and data from data generators
-sourceSets.main.resources { srcDirs 'src/generated/resources/' }
-
-repositories {
-    maven {
-        name = 'Kotlin for Forge'
-        url = 'https://thedarkcolour.github.io/KotlinForForge/'
     }
 }
 
 dependencies {
     // Use the latest version of Minecraft Forge
     minecraft 'net.minecraftforge:forge:1.16.5-36.1.32'
-
-    // Use the latest version of KotlinForForge
-    implementation 'thedarkcolour:kotlinforforge:1.14.0'
 }
 
 jar {
