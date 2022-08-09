@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[26,)"
+license='LGPL'
+
+[[mods]]
+modId="prochunk"
+version="${file.jarVersion}"
+displayName="ProChunk"
+credits="Herobrine knows all."
+authors="thedarkcolour"
+description='''
+Fix Chunk Pregen's paywall.
+'''
+[[dependencies.examplemod]]
+    modId="forge"
+    mandatory=true
+    versionRange="[26,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.examplemod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.14,)"
+    ordering="NONE"
+    side="BOTH"
